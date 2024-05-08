@@ -12,7 +12,7 @@ const timeInSeconds = 3600; // seconds (1 hour)
 const distanceInKilometers = 0; // distance (km)
 const remainingFuel = 5000; // remaining fuel (kg)
 const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
-const speed = distanceInKilometers / timeInSeconds;
+
 distanceInKilometers = d + vel * time; //calcultes new distance
 const rf = fbr * time; //calculates remaining fuel
 

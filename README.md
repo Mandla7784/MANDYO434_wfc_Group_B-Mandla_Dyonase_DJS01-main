@@ -9,6 +9,7 @@ finding calculating errors and make sure that the calculations are robust such t
 
 The initial functions were flawed and resulted to incorrect calculations.
 
+
 ![alt text](mars.gif)
 
 ##### Problem Areas to Address

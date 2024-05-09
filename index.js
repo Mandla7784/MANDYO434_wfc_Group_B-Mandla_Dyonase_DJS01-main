@@ -5,8 +5,6 @@
  * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
  */
 
-const { error } = require("console");
-
 // Given Parameters
 const initialVelocityInKilometersPerHour = 10000; // velocity (km/h)
 const acceleration = 3; // acceleration (m/s^2)
@@ -19,6 +17,7 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
  * @param {number} initialVelocityInKilometersPerHour -The initila velocaity of an object in km/h
  * @param {number} timeInSeconds - times elaspsed in seconds
  *@throws {Error}   - if any of the input is invalid we throw error
+ 
  *
  */
 
@@ -35,12 +34,15 @@ const calculateNewDistance = (
 
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculateNewVelocityl = (vel, acc, time) => {
-  //validating input 
-     if(acceleration < 0 || initialVelocityInKilometersPerHour < 0 || timeInSeconds < 0){
-      throw new Error('all values must be positive')
-     }else if(typeof acceleration !== Number || typeof initialVelocityInKilometersPerHour !== Number || typeof timeInSeconds !== Number){
-             throw 
-     }
+  //validating input
+  if (
+    acc < 0 ||
+    vel < 0 ||
+    time < 0 ||
+    typeof acc !== "number" ||
+    typeof vel !== "number" ||
+    typeof time !== "number"
+  )
     return vel + acc * time;
 };
 

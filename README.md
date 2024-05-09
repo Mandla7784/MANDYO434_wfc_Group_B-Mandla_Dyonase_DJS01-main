@@ -35,9 +35,9 @@ In line 12 i decalred distance with let keyword since it will change overTime
 - **New Distance**: Approximately 10000 km after correction.
 - **Remaining Fuel**: Approximately 3,200 kg after correction.
 
-#### Your Task
+#### My Task
 
-1. **Identify and Understand Errors**: Analyse the provided functions to determine how unit mismatches and parameter misalignments cause incorrect results.
+1. **Was to Identify and Understand Errors**:I analysed the provided functions to determine how unit mismatches and parameter misalignments caused incorrect results.
 2. **Refactor and Correct**: Modify the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
 
 #### Solution Approach

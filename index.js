@@ -20,10 +20,7 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
  
  *
  */
-
 const initialVelocityMps = initialVelocityInKilometersPerHour / 3.6;
-console.log(initialVelocityMps);
-
 const calculateNewDistance = (
   initialVelocityInKilometersPerHour,
   acceleration,
@@ -45,13 +42,16 @@ const calculateNewVelocityl = (vel, acc, time) => {
     typeof acc !== "number" ||
     typeof vel !== "number" ||
     typeof time !== "number"
-  )
-    return vel + acc * time;
+  ) {
+    throw Error("All values must be positive and must be numbers");
+  }
+
+  return vel + acc * time;
 };
 
 const newVelocity = calculateNewVelocityl(
+  initialVelocityMps,
   acceleration,
-  initialVelocityInKilometersPerHour,
   timeInSeconds
 ); //calculates new velocity based on acceleration
 
@@ -64,6 +64,6 @@ const newDistance = calculateNewDistance(
   timeInSeconds
 );
 
-console.log(`Corrected New Velocity: ${newVelocity} km/h`);
+console.log(`Corrected New Velocity: ${newVelocity * 3.6} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
 console.log(`Corrected Remaining Fuel: ${remaningFuel} kg`);

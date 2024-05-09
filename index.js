@@ -21,6 +21,9 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
  *
  */
 
+const initialVelocityMps = initialVelocityInKilometersPerHour / 3.6;
+console.log(initialVelocityMps);
+
 const calculateNewDistance = (
   initialVelocityInKilometersPerHour,
   acceleration,

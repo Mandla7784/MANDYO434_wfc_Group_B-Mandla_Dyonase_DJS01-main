@@ -21,7 +21,8 @@ const calculateNewDistance = (
   timeInSeconds
 ) => {
   return (
-    initialVelocityInKilometersPerHour / 3.6(acceleration * 0.5 * timeInSeconds)
+    initialVelocityInKilometersPerHour / 3.6 +
+    0.5 * acceleration * timeInSeconds
   );
 };
 
@@ -45,4 +46,4 @@ const newVelocity = calculateNewVelocityl(
 
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
-console.log(`Corrected Remaining Fuel: ${rf} kg`);
+console.log(`Corrected Remaining Fuel: ${remaningFuel} kg`);

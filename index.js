@@ -55,7 +55,7 @@ const newVelocity = calculateNewVelocityl(
   timeInSeconds
 ); //calculates new velocity based on acceleration
 
-const remaningFuel = fuelBurnRate * timeInSeconds; //calculates remaining fuel
+const remaningFuel = initialFuel - fuelBurnRate * timeInSeconds; //calculates remaining fuel
 
 //calcultes new distance
 const newDistance = calculateNewDistance(

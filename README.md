@@ -13,9 +13,11 @@ The initial functions were flawed and resulted to incorrect calculations.
 
 ##### Problem Areas to Address
 
-In line 19 there was a log error says "calcNewVel is not defined"
+In line 19 there was a log error says "calcNewVel is not defined".
+The calculate newvelocity function was called before initialized so i had to move it upwards .
 
 1. **Unit Mismatch**: The provided functions fail to convert units correctly, leading to calculation inaccuracies.
+   the values were not correctly converted for accurate calculations
 2. **Parameter Misalignment**: Parameters are not handled in a way that prevents or highlights the potential for unit mismatch errors, leading to possible confusion.
 
 ##### Initial Parameters
@@ -36,16 +38,16 @@ In line 19 there was a log error says "calcNewVel is not defined"
 #### My Task
 
 1. **Was to Identify and Understand Errors**:I analysed the provided functions to determine how unit mismatches and parameter misalignments caused incorrect results.
-2. **Refactor and Correct**: Modify the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
+2. **Refactor and Correct**: I Modified the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
 
 #### Solution Approach
 
-- Use object destructuring in function parameters for better clarity.
-- Implement accurate unit conversions within the functions.
-- Ensure the corrected functions address the issues of unit mismatches and parameter clarity.
+- I Used object destructuring in function parameters for better clarity.
+- Implemented accurate unit conversions within the functions.
+- I ensured that the corrected functions address the issues of unit mismatches and parameter clarity.
 
 #### Debugging Guide
 
-1. Enhance code readability for easier debugging.
-2. Identify and correct calculation errors.
-3. Improve the robustness of calculations. If incorrect units are used or other errors are detected, the code should notify the user instead of producing an incorrect result.
+1. I enhanced code readability for easier debugging.
+2. Identified and correct calculation errors.
+3. I Improved the robustness of calculations.

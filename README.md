@@ -14,8 +14,6 @@ The initial functions were flawed and resulted to incorrect calculations.
 ##### Problem Areas to Address
 
 In line 19 there was a log error says "calcNewVel is not defined"
-In line 15 i declared a speed variable to calculate speed before distance
-In line 12 i decalred distance with let keyword since it will change overTime
 
 1. **Unit Mismatch**: The provided functions fail to convert units correctly, leading to calculation inaccuracies.
 2. **Parameter Misalignment**: Parameters are not handled in a way that prevents or highlights the potential for unit mismatch errors, leading to possible confusion.

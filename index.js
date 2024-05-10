@@ -21,18 +21,18 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
  *
  */
 const initialVelocityMps = initialVelocityInKilometersPerHour / 3.6;
-const calculateNewDistance = (
+const calculateNewDistance = ({
   initialVelocityInKilometersPerHour,
   acceleration,
-  timeInSeconds
-) => {
+  timeInSeconds,
+}) => {
   return (
     initialVelocityInKilometersPerHour / 3.6 +
     0.5 * acceleration * timeInSeconds
   );
 };
 //the function to calculate velocity was called before declaration
-const calculateNewVelocityl = (vel, acc, time) => {
+const calculateNewVelocity = (vel, acc, time) => {
   //validating input
   if (
     acc < 0 ||
@@ -48,7 +48,7 @@ const calculateNewVelocityl = (vel, acc, time) => {
   return vel + acc * time;
 };
 
-const newVelocity = calculateNewVelocityl(
+const newVelocityInKilometersPerHour = calculateNewVelocity(
   initialVelocityMps,
   acceleration,
   timeInSeconds
@@ -57,12 +57,16 @@ const newVelocity = calculateNewVelocityl(
 const remaningFuel = initialFuel - fuelBurnRate * timeInSeconds; //calculates remaining fuel
 
 //calcultes new distance
-const newDistance = calculateNewDistance(
+const newDistanceinKilometerPerHour = calculateNewDistance({
   initialVelocityInKilometersPerHour,
   acceleration,
-  timeInSeconds
-);
+  timeInSeconds,
+});
 
-console.log(`Corrected New Velocity: ${newVelocity * 3.6} km/h`);
-console.log(`Corrected New Distance: ${Math.round(newDistance)} km`);
+console.log(
+  `Corrected New Velocity: ${newVelocityInKilometersPerHour * 3.6} km/h`
+);
+console.log(
+  `Corrected New Distance: ${Math.round(newDistanceinKilometerPerHour)} km`
+);
 console.log(`Corrected Remaining Fuel: ${remaningFuel} kg`);

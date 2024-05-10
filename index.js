@@ -31,8 +31,7 @@ const calculateNewDistance = (
     0.5 * acceleration * timeInSeconds
   );
 };
-
-// Pick up an error with how the function below is called and make it robust to such errors
+//the function to calculate velocity was called before declaration
 const calculateNewVelocityl = (vel, acc, time) => {
   //validating input
   if (
@@ -65,5 +64,5 @@ const newDistance = calculateNewDistance(
 );
 
 console.log(`Corrected New Velocity: ${newVelocity * 3.6} km/h`);
-console.log(`Corrected New Distance: ${newDistance} km`);
+console.log(`Corrected New Distance: ${Math.round(newDistance)} km`);
 console.log(`Corrected Remaining Fuel: ${remaningFuel} kg`);

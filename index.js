@@ -65,27 +65,42 @@ const calculateNewVelocity = ({ vel, acc, time }) => {
   return vel + acc * time;
 };
 
-const newVelocityInKilometersPerHour = calculateNewVelocity(
-  initialVelocityMps,
-  acceleration,
-  timeInSeconds
-); //calculates new velocity based on acceleration
+try {
+  const {
+    initialVelocityInKilometersPerHour,
+    acceleration,
+    timeInSeconds,
+    initialFuel,
+    fuelBurnRate,
+  } = Physics;
+  const newVelocityInMps = calculateNewVelocity({
+    vel: initialVelocityInKilometersPerHour / Physics.CONVERSION_FACTOR,
+    acc: acceleration,
+    time: timeInSeconds,
+  });
+  const newVelocityInKilometersPerHour =
+    newVelocityInMps * Physics.CONVERSION_FACTOR;
 
-const remaningFuel = initialFuel - fuelBurnRate * timeInSeconds; //calculates remaining fuel
+  // const newVelocityInKilometersPerHour = calculateNewVelocity(
+  //   initialVelocityMps,
+  //   acceleration,
+  //   timeInSeconds
+  // ); //calculates new velocity based on acceleration
 
-//calcultes new distance
-const newDistanceinKilometerPerHour = calculateNewDistance({
-  initialVelocityInKilometersPerHour,
-  acceleration,
-  timeInSeconds,
-});
+  const remaningFuel = initialFuel - fuelBurnRate * timeInSeconds; //calculates remaining fuel
 
-console.log(
-  `Corrected New Velocity: ${
-    newVelocityInKilometersPerHour * CONVERSION_FACTOR
-  } km/h`
-);
-console.log(
-  `Corrected New Distance: ${Math.round(newDistanceinKilometerPerHour)} km`
-);
-console.log(`Corrected Remaining Fuel: ${remaningFuel} kg`);
+  //calcultes new distance
+  const newDistanceinKilometerPerHour = calculateNewDistance({
+    initialVelocityInKilometersPerHour,
+    acceleration,
+    timeInSeconds,
+  });
+
+  console.log(`Corrected New Velocity: ${newVelocityInKilometersPerHour} km/h`);
+  console.log(
+    `Corrected New Distance: ${Math.round(newDistanceinKilometerPerHour)} km`
+  );
+  console.log(`Corrected Remaining Fuel: ${remaningFuel} kg`);
+} catch (error) {
+  console.log("Error", error.message);
+}

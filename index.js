@@ -12,6 +12,7 @@ const timeInSeconds = 3600; // seconds (1 hour)
 const distanceInKilometers = 0; // distance (km)
 const initialFuel = 5000; // remaining fuel (kg)
 const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
+const CONVERSION_FACTOR = 3.6;
 /**
  * @param {number} acceleration - The accelearaation of tthe object im mps
  * @param {number} initialVelocityInKilometersPerHour -The initila velocaity of an object in km/h
@@ -20,7 +21,8 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
  
  *
  */
-const initialVelocityMps = initialVelocityInKilometersPerHour / 3.6;
+const initialVelocityMps =
+  initialVelocityInKilometersPerHour / CONVERSION_FACTOR;
 const calculateNewDistance = ({
   initialVelocityInKilometersPerHour,
   acceleration,

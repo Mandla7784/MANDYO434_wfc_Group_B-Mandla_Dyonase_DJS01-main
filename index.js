@@ -7,12 +7,14 @@
 
 // Given Parameters
 const CONVERSION_FACTOR = 3.6;
-const initialVelocityInKilometersPerHour = 10000; // velocity (km/h)
-const acceleration = 3; // acceleration (m/s^2)
-const timeInSeconds = 3600; // seconds (1 hour)
+const Physics = {
+  initialVelocityInKilometersPerHour: 10000, // velocity (km/h)
+  acceleration: 3, // acceleration (m/s^2)
+  timeInSeconds: 3600, // seconds (1 hour)
+  initialFuel: 5000, // remaining fuel (kg)
+  fuelBurnRate: 0.5, // fuel burn rate (kg/s)
+};
 // const distanceInKilometers = 0; // distance (km)
-const initialFuel = 5000; // remaining fuel (kg)
-const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
 
 /**
  * @param {number} acceleration - The accelearaation of tthe object im mps
@@ -22,18 +24,27 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
  
  *
  */
-const initialVelocityMps =
-  initialVelocityInKilometersPerHour / CONVERSION_FACTOR;
+
 const calculateNewDistance = ({
   initialVelocityInKilometersPerHour,
   acceleration,
   timeInSeconds,
 }) => {
-  return (
-    initialVelocityInKilometersPerHour / CONVERSION_FACTOR +
-    0.5 * acceleration * timeInSeconds
-  );
+  if (
+    isNaN(initialVelocityInKilometersPerHour) ||
+    isNaN(acceleration) ||
+    isNaN(timeInSeconds) ||
+    initialVelocityInKilometersPerHour < 0 ||
+    acceleration < 0 ||
+    timeInSeconds < 0
+  ) {
+    throw new Error("all values must be Positive");
+  }
+  const initialVelocityMps =
+    initialVelocityInKilometersPerHour / CONVERSION_FACTOR;
+  return initialVelocityMps + 0.5 * acceleration * timeInSeconds;
 };
+
 //the function to calculate velocity was called before declaration
 const calculateNewVelocity = (vel, acc, time) => {
   //validating input

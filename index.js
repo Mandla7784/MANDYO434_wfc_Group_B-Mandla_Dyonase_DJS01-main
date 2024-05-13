@@ -29,7 +29,7 @@ const calculateNewDistance = ({
   timeInSeconds,
 }) => {
   return (
-    initialVelocityInKilometersPerHour / 3.6 +
+    initialVelocityInKilometersPerHour / CONVERSION_FACTOR +
     0.5 * acceleration * timeInSeconds
   );
 };
@@ -66,7 +66,9 @@ const newDistanceinKilometerPerHour = calculateNewDistance({
 });
 
 console.log(
-  `Corrected New Velocity: ${newVelocityInKilometersPerHour * 3.6} km/h`
+  `Corrected New Velocity: ${
+    newVelocityInKilometersPerHour * CONVERSION_FACTOR
+  } km/h`
 );
 console.log(
   `Corrected New Distance: ${Math.round(newDistanceinKilometerPerHour)} km`

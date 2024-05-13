@@ -6,8 +6,9 @@
  */
 
 // Given Parameters
-const CONVERSION_FACTOR = 3.6;
+
 const Physics = {
+  CONVERSION_FACTOR: 3.6,
   initialVelocityInKilometersPerHour: 10000, // velocity (km/h)
   acceleration: 3, // acceleration (m/s^2)
   timeInSeconds: 3600, // seconds (1 hour)
@@ -40,13 +41,15 @@ const calculateNewDistance = ({
   ) {
     throw new Error("all values must be Positive");
   }
+
+  const { CONVERSION_FACTOR } = Physics;
   const initialVelocityMps =
     initialVelocityInKilometersPerHour / CONVERSION_FACTOR;
   return initialVelocityMps + 0.5 * acceleration * timeInSeconds;
 };
 
 //the function to calculate velocity was called before declaration
-const calculateNewVelocity = (vel, acc, time) => {
+const calculateNewVelocity = ({ vel, acc, time }) => {
   //validating input
   if (
     acc < 0 ||

@@ -81,12 +81,6 @@ try {
   const newVelocityInKilometersPerHour =
     newVelocityInMps * Physics.CONVERSION_FACTOR;
 
-  // const newVelocityInKilometersPerHour = calculateNewVelocity(
-  //   initialVelocityMps,
-  //   acceleration,
-  //   timeInSeconds
-  // ); //calculates new velocity based on acceleration
-
   const remaningFuel = initialFuel - fuelBurnRate * timeInSeconds; //calculates remaining fuel
 
   //calcultes new distance

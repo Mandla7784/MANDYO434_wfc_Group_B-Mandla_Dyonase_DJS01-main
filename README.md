@@ -1,24 +1,17 @@
 ### DJS01: Mars Climate Orbiter Challenge
 
-The Mars Climate Orbiter incident in 1999 is a stark reminder of the importance of precision in space missions, highlighting how a simple unit mismatch led to the loss of the spacecraft. This challenge seeks to simulate similar challenges in a spacecraft navigation system, emphasising the need for accuracy in calculations.
+The Mars Climate Orbiter incident in 1999 serves as a stark reminder of the importance of precision in space missions, highlighting how a simple unit mismatch led to the loss of the spacecraft. This challenge simulates similar scenarios in a spacecraft navigation system, emphasizing the need for accuracy in calculations.
 
 #### Challenge Overview
 
-In this Project i was tasked to debug the code to make it more readable
-finding calculating errors and make sure that the calculations are robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement)
-
-The initial functions were flawed and resulted to incorrect calculations.
-
-![alt text](mars.gif)
+In this project, my task was to debug the provided code to enhance readability, fix calculation errors, and ensure robustness in calculations. The initial functions were flawed and resulted in incorrect outcomes.
 
 ##### Problem Areas to Address
 
-In line 19 there was a log error says "calcNewVel is not defined".
-The calculate newvelocity function was called before initialized so i had to move it upwards .
+One major issue was encountered in line 19, where a log error stated "calcNewVel is not defined". Upon investigation, it was found that the `calculateNewVelocity` function was called before initialized, necessitating a move upwards.
 
-1. **Unit Mismatch**: The provided functions fail to convert units correctly, leading to calculation inaccuracies.
-   the values were not correctly converted for accurate calculations
-2. **Parameter Misalignment**: Parameters are not handled in a way that prevents or highlights the potential for unit mismatch errors, leading to possible confusion.
+1. **Unit Mismatch**: The provided functions failed to convert units correctly, leading to calculation inaccuracies. The values were not correctly converted for accurate calculations.
+2. **Parameter Misalignment**: Parameters were not handled effectively, potentially causing confusion and errors.
 
 ##### Initial Parameters
 
@@ -31,23 +24,23 @@ The calculate newvelocity function was called before initialized so i had to mov
 
 ##### Expected Corrected Results
 
-- **New Velocity**: Approximately 48880 km/h after correction.
-- **New Distance**: Approximately 10000 km after correction.
+- **New Velocity**: Approximately 48,880 km/h after correction.
+- **New Distance**: Approximately 10,000 km after correction.
 - **Remaining Fuel**: Approximately 3,200 kg after correction.
 
 #### My Task
 
-1. **Was to Identify and Understand Errors**:I analysed the provided functions to determine how unit mismatches and parameter misalignments caused incorrect results.
-2. **Refactor and Correct**: I Modified the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
+1. **Identification and Understanding of Errors**: Analyzed the provided functions to determine how unit mismatches and parameter misalignments caused incorrect results.
+2. **Refactor and Correct**: Modified the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
 
 #### Solution Approach
 
-- I Used object destructuring in function parameters for better clarity.
+- Utilized object destructuring in function parameters for better clarity.
 - Implemented accurate unit conversions within the functions.
-- I ensured that the corrected functions address the issues of unit mismatches and parameter clarity.
+- Ensured that the corrected functions address the issues of unit mismatches and parameter clarity.
 
 #### Debugging Guide
 
-1. I enhanced code readability for easier debugging.
-2. Identified and correct calculation errors.
-3. I Improved the robustness of calculations.
+1. Enhanced code readability for easier debugging.
+2. Identified and corrected calculation errors.
+3. Improved the robustness of calculations to handle potential errors effectively.
